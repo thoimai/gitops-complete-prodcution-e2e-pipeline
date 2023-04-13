@@ -12,16 +12,16 @@ pipeline {
                 cleanWs()
             }
         }
-    }
-    stages {
+    
+    
         stage("Checkout from SCM") {
             steps {
                 git branch: 'main', credentialsId: 'github-pat', url: 'https://github.com/dmancloud/gitops-complete-prodcution-e2e-pipeline'
             }
         }
-    }
+    
 
-    stages {
+    
         stage("Update the Deployment Tags") {
             steps {
                 sh """
