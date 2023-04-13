@@ -2,6 +2,10 @@ pipeline {
     agent {
         label "jenkins-agent"
     }
+    environment {
+        APP_NAME = "complete-prodcution-e2e-pipeline"
+    }
+
     stages {
         stage("Cleanup Workspace") {
             steps {
