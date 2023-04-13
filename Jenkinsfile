@@ -31,6 +31,21 @@ pipeline {
                 """
             }
         }
+
+        stage("Push the changed deployment file to Git") {
+            steps {
+                sh """
+                    git config --global user.name "dmancloud"
+                    git config --global user.email "dinesh@dman.cloud"
+                    git add deployment.yaml
+                    git commit -m "Updated Deployment Manifest"
+                """
+                withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'Default')]) {
+                    sh "git push https://github.com/dmancloud/gitops-complete-pipeline.git main"
+                }
+            }
+        }
+
     }
 
 }
