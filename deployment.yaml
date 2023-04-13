@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: complete-prodcution-e2e-app
-          image: dmancloud/complete-prodcution-e2e-pipeline:0.0.1-21
+          image: dmancloud/complete-prodcution-e2e-pipeline:CHANGEME
           resources:
             limits:
               memory: "256Mi"
