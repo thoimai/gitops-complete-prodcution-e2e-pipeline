@@ -41,7 +41,7 @@ pipeline {
                     git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'Default')]) {
-                    sh "git push https://github.com/dmancloud/gitops-complete-pipeline.git main"
+                    sh "git push https://github.com/dmancloud/gitops-complete-prodcution-e2e-pipeline main"
                 }
             }
         }
